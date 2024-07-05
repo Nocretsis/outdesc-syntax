@@ -1,0 +1,40 @@
+{
+  "name": "outdesc-syntax",
+  "publisher": "AzaziasHardman",
+  "displayName": "OutDesc-Syntax",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "outdesc",
+        "extensions": [
+          ".txt",
+          ".outdesc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "outdesc",
+        "scopeName": "source.outdesc",
+        "path": "./syntaxes/outdesc.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "outdesc-theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/outdesc-p2-color-theme.json"
+      }
+    ]
+  }
+}

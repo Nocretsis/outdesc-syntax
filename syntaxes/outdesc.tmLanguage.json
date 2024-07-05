@@ -1,0 +1,180 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "outdesc",
+  "patterns": [
+    {
+      "include": "#time"
+    },
+    {
+      "include": "#date-1"
+    },
+    {
+      "include": "#date-2"
+    },
+    {
+      "include": "#date-3"
+    },
+    {
+      "include": "#numeric"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#boolean"
+    },
+    {
+      "include": "#cite"
+    },
+    {
+      "include": "#cutting-line"
+    },
+    {
+      "include": "#highlighting"
+    },
+    {
+      "include": "#fields-assign"
+    },
+    {
+      "include": "#tagname"
+    },
+    {
+      "include": "#boxwall"
+    },
+    {
+      "include": "#cite2"
+    }
+  ],
+  "scopeName": "source.outdesc",
+  "repository": {
+    "strings": {
+      "match": "([\"']).*\\1",
+      "name": "string.quoted.outdesc"
+    },
+    "numeric": {
+      "match": "[+-]?\\d+\\.?\\d*([Ee][+-]?\\d+)?",
+      "name": "constant.numeric.outdesc"
+    },
+    "cutting-line": {
+      "match": "^\\s*(([=\\-+#])\\2{2,})((?!\\2).*?|)(\\2{2,})\\s*$",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.heading.outdesc"
+        },
+        "3": {
+          "name": "entity.name.section.outdesc",
+          "patterns": [
+            {
+              "include": "#numeric"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#boolean"
+            }
+          ]
+        },
+        "4": {
+          "name": "punctuation.definition.heading.outdesc"
+        }
+      }
+    },
+    "fields-assign": {
+      "match": "(^|;|\\|)\\s*([^:=]*)(?:\\s*[:=])",
+      "captures": {
+        "2": {
+          "name": "variable.outdesc",
+          "patterns": [
+            {
+              "include": "#numeric"
+            }
+          ]
+        }
+      }
+    },
+    "keywords": {
+      "match": "\\b(on|in|at|for|while|return|over|of)\\b",
+      "name": "keyword.control.outdesc"
+    },
+    "boolean": {
+      "match": "\\b([Tt]rue|[Ff]alse)\\b",
+      "name": "constant.language.outdesc"
+    },
+    "highlighting": {
+      "match": "(?:^\\s*)(\\*\\w*)",
+      "name": "keyword.other"
+    },
+    "tagname": {
+      "match": "(<)([^>]+)(>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.tag.outdesc"
+        },
+        "2": {
+          "name": "entity.name.tag.outdesc"
+        },
+        "3": {
+          "name": "punctuation.definition.tag.outdesc"
+        }
+      }
+    },
+    "cite": {
+      "begin": "`",
+      "end": "`",
+      "name": "comment.outdesc"
+    },
+    "cite2": {
+      "begin": "/\\*",
+      "end": "\\*/",
+      "name": "comment.outdesc"
+    },
+    "boxwall": {
+      "match": "([\\||#])(.+?)(\\1)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.heading.outdesc"
+        },
+        "2": {
+          "name": "string.quoted.outdesc",
+          "patterns": [
+            {
+              "include": "#numeric"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#boolean"
+            },
+            {
+              "include": "#tagname"
+            }
+          ]
+        },
+        "3": {
+          "name": "punctuation.definition.heading.outdesc"
+        }
+      }
+    },
+    "time": {
+      "match": "\\b([01]?\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.[0-9]+)?\\b",
+      "name": "constant.other.time.outdesc"
+    },
+    "date-1": {
+      "match": "\\b([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))\\b",
+      "name": "constant.other.date.outdesc"
+    },
+    "date-2": {
+      "match": "\\b([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))\\b",
+      "name": "constant.other.date.outdesc"
+    },
+    "date-3": {
+      "match": "\\b(0?[1-9]|[12]\\d|3[01]) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ([12]\\d{3})\\b",
+      "name": "constant.other.date.outdesc"
+    }
+  }
+}

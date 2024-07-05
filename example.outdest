@@ -1,0 +1,24 @@
+============= section 1 =============
+
+array[int]: [1, 2, 3, 4, 5]
+float : 2.0
+sci float : 20e-1
+bool : true
+string : "hello"
+str cann't contain "1 2 3 4 5"
+in this syntax, 
+tag: <code> </code>
+/*  */
+#############################################
+#                                           #
+#                ATTENTION                  #
+#   in boxed output, syntax highlighting    #
+#   is supported. just like this.           #
+#    1 2 3 4 5   true   "hello"             #
+#                                           #
+#############################################
+    *attention using `*`, contacted text will be highlighted.
+
+31 Feb 2022 12:00:00
+
+=== end of section 1 ===
