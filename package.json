@@ -1,9 +1,10 @@
 {
   "name": "outdesc-syntax",
   "publisher": "AzaziasHardman",
+  "repository": "https://github.com/Nocretsis/outdesc-syntax",
   "displayName": "OutDesc-Syntax",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.90.0"
   },

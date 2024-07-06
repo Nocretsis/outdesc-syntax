@@ -18,6 +18,9 @@
       "include": "#numeric"
     },
     {
+      "include": "#massive-numeric"
+    },
+    {
       "include": "#strings"
     },
     {
@@ -56,6 +59,10 @@
     },
     "numeric": {
       "match": "[+-]?\\d+\\.?\\d*([Ee][+-]?\\d+)?",
+      "name": "constant.numeric.outdesc"
+    },
+    "massive-numeric": {
+      "match": "[+-]?(\\d{1,3})([',])\\d{3}(\\2\\d{3})*",
       "name": "constant.numeric.outdesc"
     },
     "cutting-line": {
